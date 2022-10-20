@@ -1,0 +1,17 @@
+name: "Close Pull Request"
+description: "A GitHub action to automatically close a pull request."
+author: "NCR Corporation"
+inputs:
+  comment:
+    description: "Post a issue comment just before closing a pull request."
+    required: false
+  github_token:
+    description: "Token used to close a pull request and create an issue comment"
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: "slash"
+  color: "red"
