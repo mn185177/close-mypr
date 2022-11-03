@@ -53,7 +53,7 @@ const run = async () => {
   core.info("Updating the state of a pull request to closed");
   await client.pulls.update({ ...context.repo,
     pull_number: context.issue.number,
-    state: "closed"
+    state: "locked"
   });
   core.info(`Closed a pull request ${context.issue.number}`);
 };
